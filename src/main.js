@@ -30,9 +30,18 @@ const imgCont = document.querySelectorAll('.imgCont');
 searchIconElem.addEventListener('click', () => {
   screen1Elem.classList.add('inactive');
   screen2Elem.classList.remove('inactive');
-  const inputVal = inputSearchElem.value;
+  const inputVal = inputSearchElem.value.toLowerCase();
   screen2Elem.innerHTML = `${searcher(pokemones, inputVal)}`;
 });
+inputSearchElem.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    screen1Elem.style.display = 'none';
+    screen2Elem.style.display = 'block';
+    const inputVal = inputSearchElem.value.toLowerCase();
+    screen2Elem.innerHTML = `${searcher(pokemones, inputVal)}`;
+  }
+});
+
 // Menu boton Home
 mHome.addEventListener('click', () => {
   screen1Elem.style.display = 'flex';
@@ -51,7 +60,8 @@ mPokedex.addEventListener('click', () => {
 });
 // Muestra Info al tocar al pokemon
 s3dataElem.addEventListener('click', (e) => {
-  const numClick = e.target.id;
+  const numClick = e.target.className;
+  // const clicked = pokemones.find(poke => poke.num === numClick);
   screen2Elem.style.display = 'block';
   // screen2Elem.style.visibility = 'visible';
   screen3Elem.style.display = 'none';

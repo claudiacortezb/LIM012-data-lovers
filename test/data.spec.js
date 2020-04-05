@@ -176,9 +176,8 @@ const inputShowAll = dato.pokemon[0];
 const outputShowInfo = `
   <div class="imgCont">
       <span class="circle">001</span>
-      <img src="https://www.serebii.net/pokemongo/pokemon/001.png" alt="pokemonImage">
-      <span> bulbasaur</span>
-      <p id="001" class="more">More</p>
+      <img class="bulbasaur" src="https://www.serebii.net/pokemongo/pokemon/001.png" alt="pokemonImage">
+      <span class="bulbasaur"> bulbasaur</span>
   </div>
   `;
 const outputShowAll = `

@@ -23,10 +23,8 @@ export const showAllData = poke => `
 export const showInfo = data => `
   <div class="imgCont" >
       <span class="circle">${data.num}</span>
-      <img src="${data.img}" alt="pokemonImage">
-      <span> ${data.name}</span>
-      <p id="${data.num}" class="more">More</p>
-      <p id="click" class="more">click</p>
+      <img class="${data.name}" src="${data.img}" alt="pokemonImage">
+      <span class="${data.name}"> ${data.name}</span>
   </div>
   `;
 // Buscador
@@ -50,6 +48,15 @@ export const orderBy = (poke, order) => {
       // eslint-disable-next-line no-nested-ternary
       return (a.name > b.name) ? 1 : ((a.name < b.name) ? -1 : 0);
     }
+    /* if (order === 'asc') {
+      if (a.name > b.name) {
+        return 1;
+      }
+      if (a.name < b.name) {
+        return -1;
+      }
+      return 0;
+    } */
     if (order === 'desc') {
       // eslint-disable-next-line no-nested-ternary
       return (a.name < b.name) ? 1 : ((a.name > b.name) ? -1 : 0);
@@ -58,9 +65,20 @@ export const orderBy = (poke, order) => {
     if (order === 'numUp') { return (a.num - b.num); }
     // numero descendente
     return (b.num - a.num);
+    /*     if (order === 'numDown') {
+      if (a.num > b.num) {
+        return -1;
+      }
+      if (a.num < b.num) {
+        return 1;
+      }
+      return 0;
+    } */
   });
   return arrSort;
 };
+
+
 // Filtra por tipo
 export const typeFilter = (poke, tipo) => {
   // eslint-disable-next-line no-shadow
