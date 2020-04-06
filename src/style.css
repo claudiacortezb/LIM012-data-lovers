@@ -458,9 +458,13 @@ header{
 }
 .infoCont{
     width: 100%;
+    
 }
 #hW{
     flex-direction: column;
+    background-color: violet;
+    justify-content: center;
+    align-items: center;
 }
 #about{
     display: none;

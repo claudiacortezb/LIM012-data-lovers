@@ -69,7 +69,7 @@ s3dataElem.addEventListener('click', (e) => {
 });
 
 //
-const click = document.querySelector('#click');
+/* const click = document.querySelector('#click');
 click.addEventListener('click', () => {
   const f = document.createElement('div');
   f.setAttribute('class', 'container');
@@ -82,7 +82,7 @@ click.addEventListener('click', () => {
   document.body.appendChild(f);
   return f;
 })
-
+ */
 
 
 
